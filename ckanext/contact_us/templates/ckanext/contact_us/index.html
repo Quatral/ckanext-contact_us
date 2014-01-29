@@ -1,0 +1,48 @@
+{% extends "page.html" %}
+{% block subtitle %}{{ _('Contact us') }}{% endblock %}
+{% block breadcrumb_content %}
+  <li class="active"><a href="#">{{ _('Contact us') }}</a></li>
+{% endblock %}
+
+
+{% block secondary_content %}
+<section class="module module-narrow module-shallow">
+    <h2 class="module-heading"><i class="icon-medium icon-info-sign"></i></h2>
+    <div class="module-content">
+		<p>
+			{% trans %}
+			Use this form to obtain information and send us your comments about the open data portal. We will redirect your message to the appropriate resources. All fields are required.
+			{% endtrans %}
+		</p>
+		<p>
+			{% trans %}
+			We will answer your email within 48 business hours.
+			{% endtrans %}
+		</p>
+	</div>
+</section>
+{% endblock %}
+
+{% block primary_content %}
+<article class="module">
+    <div class="module-content">
+    	<h2>{{ _('Contact us') }}</h2>
+		<p>*{{ _('All fields are required') }}</p>
+		{% set form_info = [
+		    {'name': 'contact_us.name', 'control': 'input', 'label': _('Your name')+' *', 'placeholder': _('Your name')},
+		    {'name': 'contact_us.email', 'control': 'input', 'label': _('Your email')+' *', 'placeholder': _('email@domain.com')},
+		    {'name': 'contact_us.message', 'control': 'textarea', 'label': _('Your Message')+' *', 'placeholder': _('Hi, My message is ...')}
+		] %}
+		
+		<form enctype="multipart/form-data" method="post" action="">
+		{% import 'macros/autoform.html' as autoform %}
+		{% import 'macros/form.html' as form %}
+		{{ form.errors(error_summary) }}
+		{{ autoform.generate(form_info, data, errors) }}
+		<input type="submit" name="" value="{{ _('Submit') }}">
+		</form>
+		
+		{{c.msg}}
+	</div>
+</article>
+{% endblock %}
