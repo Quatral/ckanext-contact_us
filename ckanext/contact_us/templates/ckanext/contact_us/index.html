@@ -1,7 +1,7 @@
 {% extends "page.html" %}
 {% block subtitle %}{{ _('Contact us') }}{% endblock %}
 {% block breadcrumb_content %}
-  <li class="active"><a href="#">{{ _('Contact us') }}</a></li>
+  <li class="active"><a href="#">{{ _('Contact Us') }}</a></li>
 {% endblock %}
 
 
@@ -10,14 +10,10 @@
     <h2 class="module-heading"><i class="icon-medium icon-info-sign"></i></h2>
     <div class="module-content">
 		<p>
-			{% trans %}
-			Use this form to obtain information and send us your comments about the open data portal. We will redirect your message to the appropriate resources. All fields are required.
-			{% endtrans %}
+			{{_('Use this form to obtain information and send us your comments about the open data portal. We will redirect your message to the appropriate resources. All fields are required.')}}
 		</p>
 		<p>
-			{% trans %}
-			We will answer your email within 48 business hours.
-			{% endtrans %}
+			{{_('We will answer your email within 48 business hours.')}}
 		</p>
 	</div>
 </section>
@@ -26,11 +22,11 @@
 {% block primary_content %}
 <article class="module">
     <div class="module-content">
-    	<h2>{{ _('Contact us') }}</h2>
+    	<h2>{{ _('Contact Us') }}</h2>
 		<p>*{{ _('All fields are required') }}</p>
 		{% set form_info = [
-		    {'name': 'contact_us.name', 'control': 'input', 'label': _('Your name')+' *', 'placeholder': _('Your name')},
-		    {'name': 'contact_us.email', 'control': 'input', 'label': _('Your email')+' *', 'placeholder': _('email@domain.com')},
+		    {'name': 'contact_us.name', 'control': 'input', 'label': _('Your name')+' *', 'placeholder': _('eg. Joe Bloggs')},
+		    {'name': 'contact_us.email', 'control': 'input', 'label': _('Your email')+' *', 'placeholder': _('eg. joe@example.com')},
 		    {'name': 'contact_us.message', 'control': 'textarea', 'label': _('Your Message')+' *', 'placeholder': _('Hi, My message is ...')}
 		] %}
 		

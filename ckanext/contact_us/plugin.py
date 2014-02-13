@@ -17,8 +17,8 @@ class ContactUsPlugin(p.SingletonPlugin):
         # plugin.py file.
         toolkit.add_template_directory(config, 'templates')
         
-    def after_map(self, map):
-        map.connect('contact_us', '/contact-us',
+    def before_map(self, map):
+        map.connect('contact-us', '/contact-us',
             controller='ckanext.contact_us.controller:ContactUsController',
             action='index')
         return map  
