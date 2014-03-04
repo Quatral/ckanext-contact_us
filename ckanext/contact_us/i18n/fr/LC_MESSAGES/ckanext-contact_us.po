@@ -33,12 +33,12 @@ msgstr "Courriel Envoyé"
 
 #: ckanext/contact_us/templates/ckanext/contact_us/index.html:2
 msgid "Contact us"
-msgstr "Nous contacter"
+msgstr "Nous joindre"
 
 #: ckanext/contact_us/templates/ckanext/contact_us/index.html:4
 #: ckanext/contact_us/templates/ckanext/contact_us/index.html:25
 msgid "Contact Us"
-msgstr "Nous Contacter"
+msgstr "Nous joindre"
 
 #: ckanext/contact_us/templates/ckanext/contact_us/index.html:13
 msgid ""
