@@ -32,7 +32,8 @@ class ContactUsController(BaseController):
             
             if errors == {} :
                 try:
-                    ckan.lib.mailer._mail_recipient('Admin',config.get('email_to'),data.get('contact_us.name'),data.get('contact_us.email'),'Contact form',data.get('contact_us.message'))
+                    emails = config.get('contact_us.email') 
+                    for v in emails.split(','): ckan.lib.mailer._mail_recipient('Admin',v,data.get('contact_us.name'),data.get('contact_us.email'),'Contact form',data.get('contact_us.message'))
                     h.flash_success(_('Email sent'))
                     data = {}
                 except ckan.lib.mailer.MailerException:
