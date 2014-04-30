@@ -21,6 +21,8 @@ class ContactUsController(BaseController):
         
         if not data == {} :
             import ckan.lib.mailer
+            if data.get('contact_us.nochange') != 'http://' :
+                errors['contact_us.nochange'] = [_('The value was edited')]
             if not data.get('contact_us.name') :
                 errors['contact_us.name'] = [_('Missing value')]
             if not data.get('contact_us.email') :

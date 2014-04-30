@@ -35,10 +35,17 @@
 		{% import 'macros/form.html' as form %}
 		{{ form.errors(error_summary) }}
 		{{ autoform.generate(form_info, data, errors) }}
+		<div class="control-group control-medium controls-text">
+		    <label class="control-label" for="field-contact-us-nochange">Do not change *</label>
+		    <div class="controls ">
+		    	<input id="field-contact-us-nochange" type="text" name="contact_us.nochange" value="http://">
+		    </div>
+		</div>
 		<input type="submit" name="" value="{{ _('Submit') }}">
 		</form>
 		
 		{{c.msg}}
 	</div>
+	<style>.controls-text{visibility:hidden;height:10px;}</style>
 </article>
 {% endblock %}
